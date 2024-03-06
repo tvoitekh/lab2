@@ -58,7 +58,7 @@ contract CensorshipToken is ERC20 {
 
     // Function to claw back tokens from a specified address (only callable by the master)
     function clawBack(address target, uint256 amount) external onlyMaster{
-        transferFrom(target,master , amount);
+        _transfer(target, master , amount);
     }
 
     // Internal function to mint (create) new tokens and assign them to a specified address (only callable by the master)
